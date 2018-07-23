@@ -3,7 +3,7 @@ import injectSheet from "react-jss";
 import PropTypes from "prop-types";
 import { react } from "@nosplatform/api-functions";
 import axios from 'axios';
-import { api, wallet } from '@cityofzion/neon-js';
+//import { api, wallet } from '@cityofzion/neon-js';
 
 //import { Button } from 'reactstrap';
 import './ticker.css';
@@ -119,13 +119,13 @@ class Ticker extends React.Component {
 
         // Neon.get.tokenInfo('http://seed1.neo.org:20332', rpxScriptHash)
         //const response = api.nep5.getToken(endpoint, scriptHash, address);
-        var endpoint = 'http://seed1.neo.org:20332';
+        /*var endpoint = 'http://seed1.neo.org:20332';
         const response = api.nep5.getToken(endpoint, assetid_soul);
         response.then((balance) =>
           //const balance = (response.balance || 0).toString();
           alert(balance)
           //this.setState({balance_soul: balance});
-        );
+        );*/
         
 
         this.props.nos.getBalance({ asset: gas })
