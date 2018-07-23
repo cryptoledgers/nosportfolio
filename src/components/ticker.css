@@ -2,20 +2,21 @@
   box-sizing: border-box;
 }
 body {
-  background: steelblue;
+  background: #171d2d;
   font-family: "Open Sans", arial;
+  color: white;
 }
 table {
   width: 100%;
   max-width: 600px;
-  height: 320px;
+  height: 220px;
   border-collapse: collapse;
   border: 1px solid #38678f;
-  margin: 50px auto;
-  background: white;
+  margin: 30px auto;
+  background: #171d2d;
 }
 th {
-  background: steelblue;
+  background: #404c6b;
   height: 54px;
   width: 25%;
   font-weight: lighter;
@@ -32,6 +33,7 @@ tr:last-child {
   border-bottom: 0px;
 }
 td {
+  color: white;
   border-right: 1px solid #cccccc;
   padding: 10px;
   transition: all 0.2s;

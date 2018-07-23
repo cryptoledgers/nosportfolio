@@ -3,6 +3,8 @@ import injectSheet from "react-jss";
 import PropTypes from "prop-types";
 import { react } from "@nosplatform/api-functions";
 import axios from 'axios';
+import { api, wallet } from '@cityofzion/neon-js';
+
 //import { Button } from 'reactstrap';
 import './ticker.css';
 
@@ -115,6 +117,17 @@ class Ticker extends React.Component {
         }))
         .catch((err) => alert(`Error: ${err.message}`));
 
+        // Neon.get.tokenInfo('http://seed1.neo.org:20332', rpxScriptHash)
+        //const response = api.nep5.getToken(endpoint, scriptHash, address);
+        var endpoint = 'http://seed1.neo.org:20332';
+        const response = api.nep5.getToken(endpoint, assetid_soul);
+        response.then((balance) =>
+          //const balance = (response.balance || 0).toString();
+          alert(balance)
+          //this.setState({balance_soul: balance});
+        );
+        
+
         this.props.nos.getBalance({ asset: gas })
         .then((balance) => this.setState({
           gasbalance: balance,
@@ -129,9 +142,9 @@ class Ticker extends React.Component {
         this.props.nos.getBalance({ asset: assetid_soul, address: "ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2" })
         .then((balance) => 
           {
-            alert(assetid_soul);
-            alert(balance);
-            this.setState({balance_soul: balance})
+            //alert(assetid_soul);
+            //alert(balance);
+            //this.setState({balance_soul: balance})
           }
         )
         .catch((err) => alert(`Error: ${err.message}`));  
@@ -143,9 +156,7 @@ class Ticker extends React.Component {
     }
 
       })
-
-      
-  
+    
   }
 
   
@@ -175,7 +186,6 @@ class Ticker extends React.Component {
              <td>{this.state.gascap}</td>
              </tr>
            </table>
-           &nbsp;
 
            <table class="table">
            <tr>
