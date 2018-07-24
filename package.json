@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/nos/create-nos-dapp#readme",
   "dependencies": {
+    "@cityofzion/neon-js": "^3.9.2",
     "@nosplatform/api-functions": "0.2.2",
     "axios": "^0.18.0",
     "babel-polyfill": "6.26.0",
