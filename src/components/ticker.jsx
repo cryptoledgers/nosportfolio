@@ -102,7 +102,8 @@ class Ticker extends React.Component {
 
   setBalance(){
 
-    var endpoint = 'https://seed1.neo.org:10331';
+    var endpoint = 'http://seed0.bridgeprotocol.io:10332/';
+    //'https://seed1.neo.org:10331';
     // Neon.CONST.DEFAULT_RPC.MAIN;
     //'https://seed1.neo.org:20331';
 
@@ -118,6 +119,7 @@ class Ticker extends React.Component {
           result.balance.should.be.above(0)*/  
           
           //alert("get soul bal");
+
           api.nep5.getToken('https://seed1.neo.org:10331', 'ed07cffad18f1308db51920d99a2af60ac66a7b3', 'ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2')
           .then(result => {
             //alert(result.balance);            
@@ -132,6 +134,8 @@ class Ticker extends React.Component {
             value_rpx: this.state.price_rpx*this.state.balance_rpx,                       
           })
           
+        }).catch(function (error) {
+          alert("error fetchin rpx " + error);
         });
 
       api.nep5.getToken(endpoint, assetid_soul, myaddr)
@@ -142,6 +146,8 @@ class Ticker extends React.Component {
           this.setState({
             value_soul: this.state.price_soul*this.state.balance_soul,                       
           })          
+      }).catch(function (error) {
+        alert("error fetchin soul " + error);
       });
 
       api.nep5.getToken(endpoint, assetid_ont, myaddr)
@@ -269,18 +275,7 @@ class Ticker extends React.Component {
           neobalance: balance, 
           neovalue: neo_price*balance
         }))
-        .catch((err) => alert(`Error: ${err.message}`));        
-
-        // Neon.get.tokenInfo('http://seed1.neo.org:20332', rpxScriptHash)
-        //const response = api.nep5.getToken(endpoint, scriptHash, address);
-        /*var endpoint = 'http://seed1.neo.org:20332';
-        const response = api.nep5.getToken(endpoint, assetid_soul);
-        response.then((balance) =>
-          //const balance = (response.balance || 0).toString();
-          alert(balance)
-          //this.setState({balance_soul: balance});
-        );*/
-        
+        .catch((err) => alert(`Error: ${err.message}`));                
 
         this.props.nos.getBalance({ asset: gas })
         .then((balance) => this.setState({
