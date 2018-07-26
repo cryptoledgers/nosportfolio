@@ -111,19 +111,12 @@ class Ticker extends React.Component {
     const assetid_soul = 'ed07cffad18f1308db51920d99a2af60ac66a7b3';
 
 
-    /*result.should.have.keys(['name', 'symbol', 'decimals', 'totalSupply', 'balance'])
-          result.name.should.equal('LOCALTOKEN')
-          result.symbol.should.equal('LWTF')
-          result.decimals.should.equal(8)
-          result.totalSupply.should.least(1969000)
-          result.balance.should.be.above(0)*/  
-          
-          //alert("get soul bal");
-
-          api.nep5.getToken('https://seed1.neo.org:10331', 'ed07cffad18f1308db51920d99a2af60ac66a7b3', 'ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2')
-          .then(result => {
-            //alert(result.balance);            
-          });
+    /*
+    result.name
+    result.symbol
+    result.decimals
+    result.totalSupply
+    result.balance*/  
 
      api.nep5.getToken(endpoint, assetid_rpx, myaddr)
         .then(result => {
@@ -167,8 +160,7 @@ class Ticker extends React.Component {
           })
           this.setState({
             value_kky: this.state.price_kky*this.state.balance_kky,                       
-          })
-          
+          })          
       });
 
       api.nep5.getToken(endpoint, assetid_eds, myaddr)
@@ -186,7 +178,6 @@ class Ticker extends React.Component {
           this.setState({
             value_efx: this.state.price_efx*this.state.balance_efx,                       
           })
-
       });
 
       api.nep5.getToken(endpoint, assetid_nnc, myaddr)
@@ -202,9 +193,6 @@ class Ticker extends React.Component {
             balance_mct: result.balance       
           })
       });
-            
-      
-      
       
   }
 
@@ -294,32 +282,17 @@ class Ticker extends React.Component {
         var addr = 'ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2';
         alert("get token balance " + this.props.nos.api.NEP5);
         this.props.nos.NEP5.getTokenBalance(query, TEST_RHTT4, addr).then(result => {
-          //result.should.equal(2)
-          //alert(result)
         });
 
-        
-        /*this.props.nos.getBalance({ asset: assetid_soul, address: "ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2" })
-        .then((balance) => 
-          {
-            //alert(assetid_soul);
-            //alert(balance);
-            //this.setState({balance_soul: balance})
-          }
-        )
-        .catch((err) => alert(`Error: ${err.message}`));  */
-                  
-        
+
     }   
     else {
       alert("please use NOS client");
     }
-
       })
     
   }
 
-  
   render() {
 
     return (
