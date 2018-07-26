@@ -128,7 +128,7 @@ class Ticker extends React.Component {
           })
           
         }).catch(function (error) {
-          alert("error fetchin rpx " + error);
+          //alert("error fetchin rpx " + error);
         });
 
       api.nep5.getToken(endpoint, assetid_soul, myaddr)
@@ -140,7 +140,7 @@ class Ticker extends React.Component {
             value_soul: this.state.price_soul*this.state.balance_soul,                       
           })          
       }).catch(function (error) {
-        alert("error fetchin soul " + error);
+        //alert("error fetchin soul " + error);
       });
 
       api.nep5.getToken(endpoint, assetid_ont, myaddr)
@@ -280,7 +280,7 @@ class Ticker extends React.Component {
         var query = 'https://seed1.neo.org:10331';
         var TEST_RHTT4 = 'f9572c5b119a6b5775a6af07f1cef5d310038f55';
         var addr = 'ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2';
-        alert("get token balance " + this.props.nos.api.NEP5);
+        //alert("get token balance " + this.props.nos.api.NEP5);
         this.props.nos.NEP5.getTokenBalance(query, TEST_RHTT4, addr).then(result => {
         });
 
