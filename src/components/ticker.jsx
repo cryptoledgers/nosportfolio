@@ -59,7 +59,7 @@ class Ticker extends React.Component {
 
       balance_ont: 0,
       balance_soul: 0,
-      balance_kky: 0,
+      balance_tky: 0,
       balance_eds: 0,
       balance_efx: 0,
       balance_nnc: 0,
@@ -71,10 +71,10 @@ class Ticker extends React.Component {
       rpxvalue: 1,
       neovalue: 3.5,
 
-      value_soul: -1,
-      value_efx: -1,
-      value_ont: -1,
-      value_tky: -1,
+      value_soul: 0,
+      value_efx: 0,
+      value_ont: 0,
+      value_tky: 0,
       value_rpx: 0,
       gassupply: "33",
 
@@ -117,6 +117,11 @@ class Ticker extends React.Component {
           result.totalSupply.should.least(1969000)
           result.balance.should.be.above(0)*/  
           
+          //alert("get soul bal");
+          api.nep5.getToken('https://seed1.neo.org:10331', 'ed07cffad18f1308db51920d99a2af60ac66a7b3', 'ASEc4jQvAEji5Y87hrhyBB9UCGbNLLzNK2')
+          .then(result => {
+            //alert(result.balance);            
+          });
 
      api.nep5.getToken(endpoint, assetid_rpx, myaddr)
         .then(result => {
@@ -295,7 +300,7 @@ class Ticker extends React.Component {
         alert("get token balance " + this.props.nos.api.NEP5);
         this.props.nos.NEP5.getTokenBalance(query, TEST_RHTT4, addr).then(result => {
           //result.should.equal(2)
-          alert(result)
+          //alert(result)
         });
 
         
@@ -400,8 +405,8 @@ class Ticker extends React.Component {
              <td>THEKEY Token</td>
              <td>Token NEP5</td>
              <td>{this.state.price_tky}</td>
-             <td>{this.state.balance_kky}</td>
-             <td>{this.state.value_kky}</td>
+             <td>{this.state.balance_tky}</td>
+             <td>{this.state.value_tky}</td>
              <td><a href="https://neotracker.io/asset/132947096727c84c7f9e076c90f08fec3bc17f18">Neotracker</a></td>
              <td><a href="https://coinmarketcap.com/currencies/thekey">Coinmarketcap</a></td>
              <td>9,795,844,687</td>
